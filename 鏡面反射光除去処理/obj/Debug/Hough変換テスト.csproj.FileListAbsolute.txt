@@ -120,3 +120,5 @@ C:\Users\赤松　諒\Desktop\Hough変換テスト\鏡面反射光除去処理\o
 C:\Users\赤松　諒\Desktop\Hough変換テスト\鏡面反射光除去処理\obj\Debug\Hough変換テスト.メイン画面.resources
 C:\Users\赤松　諒\Desktop\Hough変換テスト\鏡面反射光除去処理\obj\Debug\Hough変換テスト.Properties.Resources.resources
 C:\Users\赤松　諒\Desktop\Hough変換テスト\鏡面反射光除去処理\obj\Debug\Hough変換テスト.csproj.GenerateResource.Cache
+C:\Users\赤松　諒\Documents\GitHub\hough_sample\鏡面反射光除去処理\obj\Debug\Hough変換テスト.exe
+C:\Users\赤松　諒\Documents\GitHub\hough_sample\鏡面反射光除去処理\obj\Debug\Hough変換テスト.pdb

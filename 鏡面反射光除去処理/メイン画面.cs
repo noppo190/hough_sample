@@ -44,7 +44,7 @@ namespace Hough変換テスト
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-
+                int a = 0;
                 //OKボタンがクリックされたとき
                 //選択されたファイル名をすべて表示する
                 foreach (var file in dialog.FileNames.Select((value, index) => new { value, index }))
