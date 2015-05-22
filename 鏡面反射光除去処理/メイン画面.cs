@@ -216,7 +216,7 @@ namespace Hough変換テスト
             if (直線 != null) 直線.Dispose();
             Hough = 入力画像.Clone();
             CvMemStorage storage = new CvMemStorage();
-            直線 = Cv.HoughLines2(Close, storage, HoughLinesMethod.Probabilistic, 1, Math.PI / 180.0, 50, 100, 10);
+            直線 = Cv.HoughLines2(Close, storage, HoughLinesMethod.Probabilistic, trackBar_rho.Value, Math.PI / 180.0, trackBar_threshold.Value, trackBar_param1.Value, trackBar_param2.Value);
             for (int i = 0; i < 直線.Total; i++)
             {
                 CvLineSegmentPoint elem = 直線.GetSeqElem<CvLineSegmentPoint>(i).Value;
@@ -226,9 +226,95 @@ namespace Hough変換テスト
  
         }
 
+        private void trackBar1_rho_Scroll(object sender, EventArgs e)
+        {
+            テキストボックスの値を更新();
+            if (Close != null)
+            {
+                Hough変換で直線を検出();
+                画像を表示(Hough);
+            }
+        }
+
+        private void trackBar_threshold_Scroll(object sender, EventArgs e)
+        {
+            テキストボックスの値を更新();
+            if (Close != null)
+            {
+                Hough変換で直線を検出();
+                画像を表示(Hough);
+            }
+        }
 
 
+        private void trackBar_param1_Scroll(object sender, EventArgs e)
+        {
+            テキストボックスの値を更新();
+            if (Close != null)
+            {
+                
+                Hough変換で直線を検出();
+                画像を表示(Hough);
+            }
+        }
 
+        private void trackBar_param2_Scroll(object sender, EventArgs e)
+        {
+            テキストボックスの値を更新();
+            if (Close != null)
+            {
+                Hough変換で直線を検出();
+                画像を表示(Hough);
+            }
+        }
+        private void テキストボックスの値を更新()
+        {
+            textBox_threshold.Text = trackBar_threshold.Value.ToString();
+            textBox_rho.Text = trackBar_rho.Value.ToString();
+            textBox_param2.Text = trackBar_param2.Value.ToString();
+            textBox_param1.Text = trackBar_param1.Value.ToString();
+ 
+        }
+
+        private void OnTextChanged_rho(object sender, EventArgs e)
+        {
+            トラックバーの値を更新();
+            Hough変換で直線を検出();
+            画像を表示(Hough);
+        }
+
+        private void OnTextChanged_threshold(object sender, EventArgs e)
+        {
+            トラックバーの値を更新();
+            Hough変換で直線を検出();
+            画像を表示(Hough);
+        }
+
+        private void OnTextChanged_param1(object sender, EventArgs e)
+        {
+            トラックバーの値を更新();
+            Hough変換で直線を検出();
+            画像を表示(Hough);
+        }
+
+        private void OnTextChanged_param2(object sender, EventArgs e)
+        {
+            トラックバーの値を更新();
+            Hough変換で直線を検出();
+            画像を表示(Hough);
+        }
+
+        private void トラックバーの値を更新()
+        {
+             if(textBox_rho.Text!=""&&int.Parse(textBox_rho.Text) >= trackBar_rho.Minimum && int.Parse(textBox_rho.Text)<=trackBar_rho.Maximum)
+                trackBar_rho.Value = int.Parse(textBox_rho.Text);
+             if (textBox_threshold.Text != "" && int.Parse(textBox_threshold.Text) >= trackBar_threshold.Minimum && int.Parse(textBox_threshold.Text) <= trackBar_threshold.Maximum)
+                 trackBar_threshold.Value = int.Parse(textBox_threshold.Text);
+             if (textBox_param1.Text != "" && int.Parse(textBox_param1.Text) >= trackBar_param1.Minimum && int.Parse(textBox_param1.Text) <= trackBar_param1.Maximum)
+                 trackBar_param1.Value = int.Parse(textBox_param1.Text);
+             if (textBox_param2.Text != "" && int.Parse(textBox_param2.Text) >= trackBar_param2.Minimum && int.Parse(textBox_param2.Text) <= trackBar_param2.Maximum)
+                 trackBar_param2.Value = int.Parse(textBox_param2.Text);
+        }
 
     }
 }
